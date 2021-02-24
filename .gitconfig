@@ -1,0 +1,64 @@
+[user]
+    email = sperezm97@gmail.com
+    name = Sebastian Perez Martinez
+    
+[color]
+
+[color "branch"]
+  current = blue
+  local = cyan
+  remote = green
+  upstream = magenta
+  plain = normal
+  
+[color "diff"]
+  context =
+  plain =
+  meta =
+  frag =
+  old -
+  new =
+  commit =
+  whitespace =
+  
+[color "status"]
+  header =
+  added =
+  updated =
+  changed =
+  untracked =
+  branch =
+  nobranch =
+  unmerged =
+  
+
+[alias]
+  cma = commit -a
+  cm = commit -m
+  rb = rebase
+  rbc = rebase --continue
+  rbs = rebase --skip
+  rba = rebase --abort
+  cl = clone
+  ck = checkout
+  ckb = checkout -b
+  lg = log --oneline --graph --all --decoreate
+  pl = pull 
+  ps = push
+  r = reset
+  st = stash
+  dif = diff
+  ck = cherry-pick
+  sq = rebase -i HEAD
+  mg = merge --squash
+  rv = revert
+  cl = clean -n
+  plr = git pull --rebase
+  phf = push --force
+  
+[help]
+  autocorrect = 1
+  
+[core]
+  editor = vim
+  
