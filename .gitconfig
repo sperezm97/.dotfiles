@@ -1,64 +1,120 @@
+# This is Git's per-user configuration file.
 [user]
-    email = sperezm97@gmail.com
-    name = Sebastian Perez Martinez
-    
+	email = sperezm97@gmail.com
+	name = Sebastian Perez
 [color]
-
+    branch = auto
+    diff = auto
+    interactive=auto
+    status = auto
+    ui = true
 [color "branch"]
-  current = blue
-  local = cyan
-  remote = green
-  upstream = magenta
-  plain = normal
-  
+    current = yellow bold
+    local = green bold
+    remote = cyan bold
 [color "diff"]
-  context =
-  plain =
-  meta =
-  frag =
-  old -
-  new =
-  commit =
-  whitespace =
-  
+    frag = magenta bold
+    meta = yellow bold
+    new = green bold
+    old = red bold
+    whitespace = red reverse
 [color "status"]
-  header =
-  added =
-  updated =
-  changed =
-  untracked =
-  branch =
-  nobranch =
-  unmerged =
-  
-
+    added = green bold
+    changed = red bold
+    untracked = magenta dim ul bold
 [alias]
-  cma = commit -a
-  cm = commit -m
-  rb = rebase
-  rbc = rebase --continue
-  rbs = rebase --skip
-  rba = rebase --abort
-  cl = clone
-  ck = checkout
-  ckb = checkout -b
-  lg = log --oneline --graph --all --decoreate
-  pl = pull 
-  ps = push
-  r = reset
-  st = stash
-  dif = diff
-  ck = cherry-pick
-  sq = rebase -i HEAD
-  mg = merge --squash
-  rv = revert
-  cl = clean -n
-  plr = git pull --rebase
-  phf = push --force
-  
-[help]
-  autocorrect = 1
-  
+    ac = !git add -A && git commit -m
+    all = add --all
+    br = branch --all
+    ci = commit
+    cia = commit --amend
+    cim = commit -m
+    cl = clone
+    ck = checkout
+    cob = checkout -b
+    dc = diff --cached
+    diff-color = diff --color-words
+    ds = diff --stat
+    ff = diff --color-words
+    last-branch = for-each-ref --sort=-committerdate refs/heads/
+    last-updated = for-each-ref --sort='-authordate:iso8601' --format=' %(authordate:relative)%09%(refname:short)' refs/heads
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative --all
+    ll = log --pretty=format:\"%C(yellow)%h%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\" --decorate --numstat
+    lol = log --graph --pretty=format:\"%C(yellow)%h%Creset%C(cyan)%C(bold)%d%Creset %C(cyan)(%cr)%Creset %C(green)%ce%Creset %s\"
+    loo = log --pretty=oneline --abbrev-commit --graph --decorat
+    ls = log --pretty=format:\"%C(yellow)%h%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\" --decorate
+    ph = !git push origin $(git rev-parse --abbrev-ref HEAD)
+    pl = !git pull origin $(git rev-parse --abbrev-ref HEAD)
+    pushall = push --recurse-submodules=on-demand
+    r = reset
+    rb = rebase
+    rh = reset --hard
+    rh1 = reset HEAD^ --hard
+    rh2 = reset HEAD^^ --hard
+    rlog = reflog
+    st = status
+    take-ours = merge -s recursive -X ours
+    take-theirs = merge -s recursive -X theirs
+    undo = reset --hard
+    undo-last-commit = reset HEAD^
+    chk = diff --check
 [core]
-  editor = vim
-  
+    autocrlf = input
+    filemode = false
+    editor = vim
+	excludesfile = /Users/sebastianperezmartinez/.gitignore_global
+[diff]
+    # Enable an experimental heuristic that shifts the hunk boundary in an
+    # attempt to make the resulting patch easier to read.
+    indentHeuristic = true
+    mnemonicprefix = true
+    # Detect copies as well as renames
+    renames = copies
+[merge]
+    stat = true
+[gc]
+    auto = 0
+[help]
+    # Automatically correct and execute mistyped commands
+    autocorrect = 1
+[merge]
+    # Include summaries of merged commits in newly created merge commit messages
+    log = true
+[push]
+    # Use the Git 1.x.x default to avoid errors on machines with old Git
+    # installations. To use `simple` instead, add this to your `~/.extra` file:
+    # `git config --global push.default simple`. See http://git.io/mMah-w.
+    default = matching
+    # Make `git push` push relevant annotated tags when pushing branches out.
+    followTags = true
+[url "git@github.com:"]
+    insteadOf = "gh:"
+    pushInsteadOf = "git://github.com/"
+    pushInsteadOf = "github:"
+[url "git://github.com/"]
+    insteadOf = "github:"
+[url "git@gist.github.com:"]
+    insteadOf = "gst:"
+    pushInsteadOf = "gist:"
+    pushInsteadOf = "git://gist.github.com/"
+[url "git://gist.github.com/"]
+    insteadOf = "gist:"
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[credential]
+	helper = osxkeychain
+[pull]
+	rebase = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/sebastianperezmartinez/.stCommitMsg
+[init]
+	defaultBranch = main
