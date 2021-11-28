@@ -28,6 +28,11 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 ```bash
 brew install autojump
 ```
+[powerlevel10k theme](https://github.com/romkatv/powerlevel10k#oh-my-zsh)
+```bash
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+```
+Run `p10k configure` in the terminal
 
 Run `vim ~/.zshrc` and replace the plugin list with this
 
