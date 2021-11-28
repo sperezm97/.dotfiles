@@ -3,14 +3,14 @@ Small guideline for setup a React Native Dev Enviorment as Sebas likes. (works f
 
 ## Must Need
 
-0a. [Install iTerm2](https://iterm2.com/downloads.html)
-here it's the setup for terminal [customization](./zsh-guide.md).
+0a. [Install iTerm2](https://iterm2.com/downloads.html).   
+here it's the setup for terminal [customization](../zsh-guide.md).
 
 0b. [Install xCode](https://apps.apple.com/us/app/xcode/id497799835?mt=12)
 
 0c. [Install Android Studio](https://developer.android.com/studio/?gclsrc=aw.ds&gclid=Cj0KCQiA7oyNBhDiARIsADtGRZaErg_w4xriyelq1Axe2r-bD10rIczhLuaLshjNRyhgiUWrcrMWoxsaAuHsEALw_wcB)
 
-1.  [Install Homebrew](https://docs.brew.sh/Installation)
+1a. [Install Homebrew](https://docs.brew.sh/Installation)
 
 2a. Install node
 ```bash
@@ -27,15 +27,16 @@ brew install watchman
 brew install cocoapods
 ```
 
-3.  Install Yarn
+3a.  Install Yarn
 ```bash
 brew install yarn
 ```
 
-5.  [Install Visual Studio Code](https://code.visualstudio.com/download)
+5a.  [Install Visual Studio Code](https://code.visualstudio.com/download)
 
-6.  [Install setting sync on VS Code]
-    use this gist number for dowloaand all the extensions
+6a.  Install setting sync on VS Code  
+    Use this gist number for dowloaand all the extensions.   
+
     ```bash
     e047734330edeb320159076bd50acfe7
     ```
