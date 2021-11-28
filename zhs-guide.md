@@ -34,6 +34,8 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 ```
 Run `p10k configure` in the terminal
 
+[Download Firecode font](https://github.com/tonsky/FiraCode)
+
 Run `vim ~/.zshrc` and replace the plugin list with this
 
 `plugins=(git zsh-autosuggestions zsh-syntax-highlighting autojump)`
